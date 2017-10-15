@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\11 Periodo\Desenvolvimento Mobile\2017-dcc196-trb1-arthur-e-gustavo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cb73160a16084987200340199867adc690a13404">
+        <dex dex="D:\11 Periodo\Desenvolvimento Mobile\2017-dcc196-trb1-arthur-e-gustavo\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c0a0cf447d064608087552e880e58bd4c45ea091\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\11 Periodo\Desenvolvimento Mobile\2017-dcc196-trb1-arthur-e-gustavo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\11 Periodo\Desenvolvimento Mobile\2017-dcc196-trb1-arthur-e-gustavo\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f3b831ff50c25c3ef633a4f97d64126c191485b8\classes.dex" />
+    </item>
+
+</items>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.ufjf.dcc196.trb1.a2017_dcc196_trb1_arthur_e_gustavo">
+    package="br.ufjf.dcc196.trb1.arthur_e_gustavo">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="br.ufjf.dcc196.trb1.arthur_e_gustavo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

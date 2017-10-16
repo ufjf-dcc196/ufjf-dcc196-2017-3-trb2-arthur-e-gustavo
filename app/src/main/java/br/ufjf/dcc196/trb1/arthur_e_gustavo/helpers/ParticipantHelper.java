@@ -6,14 +6,18 @@ import java.util.List;
 import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
 
 public class ParticipantHelper {
-
+    private static final ParticipantHelper INSTANCE = new ParticipantHelper();
     private List<Participant> listParticipant;
 
-    public ParticipantHelper() {
-        criarParticipante();
+    public static ParticipantHelper getInstance() {
+        return INSTANCE;
     }
 
-    private void criarParticipante() {
+    private ParticipantHelper() {
+        criarParticipant();
+    }
+
+    private void criarParticipant() {
         listParticipant = new ArrayList<>();
         listParticipant.add(new Participant("Fulano de tal", "fulano@email.com"));
         listParticipant.add(new Participant("Ciclano de tal", "ciclano@email.com"));
@@ -24,7 +28,7 @@ public class ParticipantHelper {
         return listParticipant;
     }
 
-    public void addParticipante(String name, String email) {
-        listParticipant.add(new Participant(name, email));
+    public void addParticipant(Participant participant) {
+        listParticipant.add(participant);
     }
 }

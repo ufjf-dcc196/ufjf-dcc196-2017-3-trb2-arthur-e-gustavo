@@ -17,7 +17,7 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
 
     public ParticipantAdapter(Context context, List<Participant> participants) {
         super(context, 0, participants);
-        this.sort(comparatorParticipante);
+        this.sort(comparatorParticipant);
     }
 
     @Override
@@ -31,7 +31,11 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
         return convertView;
     }
 
-    private static final Comparator<Participant> comparatorParticipante = new Comparator<Participant>() {
+    public void sort() {
+        this.sort(comparatorParticipant);
+    }
+
+    private static final Comparator<Participant> comparatorParticipant = new Comparator<Participant>() {
         public int compare(Participant p1, Participant p2) {
             return p1.getName().compareTo(p2.getName());
         }

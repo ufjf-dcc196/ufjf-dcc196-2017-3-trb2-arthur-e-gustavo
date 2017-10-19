@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/participante_view_txtName"
+        android:id="@+id/participant_view_txtName"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/list_text_height"
         android:gravity="center_vertical"

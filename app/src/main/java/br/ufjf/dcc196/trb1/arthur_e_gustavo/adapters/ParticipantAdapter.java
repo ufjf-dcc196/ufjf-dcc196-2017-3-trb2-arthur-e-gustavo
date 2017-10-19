@@ -15,9 +15,14 @@ import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
 
 public class ParticipantAdapter extends ArrayAdapter<Participant> {
 
+    private static final Comparator<Participant> comparatorParticipant = new Comparator<Participant>() {
+        public int compare(Participant p1, Participant p2) {
+            return p1.getName().toLowerCase().compareTo(p2.getName().toLowerCase());
+        }
+    };
+
     public ParticipantAdapter(Context context, List<Participant> participants) {
         super(context, 0, participants);
-        this.sort(comparatorParticipant);
     }
 
     @Override
@@ -26,18 +31,16 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.participant_view, parent, false);
         }
-        TextView textName = convertView.findViewById(R.id.participante_view_txtName);
+        TextView textName = convertView.findViewById(R.id.participant_view_txtName);
         textName.setText(participant.getName());
         return convertView;
     }
 
-    public void sort() {
+    @Override
+    public void notifyDataSetChanged() {
+        this.setNotifyOnChange(false);
         this.sort(comparatorParticipant);
+        super.notifyDataSetChanged();
+        this.setNotifyOnChange(true);
     }
-
-    private static final Comparator<Participant> comparatorParticipant = new Comparator<Participant>() {
-        public int compare(Participant p1, Participant p2) {
-            return p1.getName().compareTo(p2.getName());
-        }
-    };
 }

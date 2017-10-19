@@ -13,7 +13,8 @@ import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.ParticipantHelper;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listParticipants;
-    private Button btnAddParticipant;
+    private Button btnCadParticipant;
+    private Button btnCadBook;
     private ParticipantAdapter participantAdapter;
 
     @Override
@@ -22,15 +23,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listParticipants = (ListView) findViewById(R.id.listParticipant);
-        participantAdapter= new ParticipantAdapter(getApplicationContext(), ParticipantHelper.getInstance().getListParticipant());
+        participantAdapter = new ParticipantAdapter(getApplicationContext(), ParticipantHelper.getInstance().getListParticipant());
         listParticipants.setAdapter(participantAdapter);
 
-        btnAddParticipant = (Button) findViewById(R.id.btnAddParticipant);
-        btnAddParticipant.setOnClickListener(new View.OnClickListener() {
+        btnCadParticipant = (Button) findViewById(R.id.btnCadParticipant);
+        btnCadParticipant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddEditParticipantActivity.class);
-                intent.putExtra("activity_title", getResources().getString(R.string.add_participant));
+                intent.putExtra("activity_title", getResources().getString(R.string.cad_participant));
+                startActivity(intent);
+            }
+        });
+
+        btnCadBook = (Button) findViewById(R.id.btnCadBook);
+        btnCadBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddEditBookActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        participantAdapter.sort();
+        participantAdapter.notifyDataSetChanged();
         super.onResume();
     }
 }

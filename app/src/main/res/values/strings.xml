@@ -1,11 +1,19 @@
 <resources>
     <string name="app_name">Arthur e Gustavo</string>
-    <string name="add_participant">Cadastrar participante</string>
+    <string name="cad_participant">Cadastrar participante</string>
     <string name="action_register">Cadastrar</string>
     <string name="hint_e_mail">E-mail</string>
     <string name="hint_name">Nome</string>
     <string name="action_back">Voltar</string>
-    <string name="edt_name_empty">Campo nome vazio.</string>
-    <string name="edt_email_empty">Campo e-mail vazio.</string>
+    <string name="edt_name_empty">Campo Nome obrigatório.</string>
+    <string name="edt_email_empty">Campo E-mail obrigatório.</string>
     <string name="successfully_registered">Cadastro realizado com sucesso.</string>
+    <string name="hint_editora">Editora</string>
+    <string name="hint_ano_de_publicacao">Ano de publicação</string>
+    <string name="hint_titulo">Título</string>
+    <string name="edt_title_empty">Campo Título obrigatório.</string>
+    <string name="edt_publisher_empty">Campo Editora obrigatório.</string>
+    <string name="edt_year_empty">Campo Ano obrigatório.</string>
+    <string name="cad_book">Cadastrar livro</string>
+
 </resources>

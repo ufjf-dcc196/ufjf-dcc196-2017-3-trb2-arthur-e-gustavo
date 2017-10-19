@@ -16,8 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddEditParticipantActivity"
-            android:label="@string/add_participant"></activity>
+        <activity
+            android:name=".AddEditParticipantActivity"
+            android:label="@string/cad_participant" />
+        <activity
+            android:name=".AddEditBookActivity"
+            android:label="@string/cad_book" />
     </application>
 
 </manifest>

@@ -9,15 +9,15 @@ public class ParticipantHelper {
     private static final ParticipantHelper INSTANCE = new ParticipantHelper();
     private List<Participant> listParticipant;
 
+    private ParticipantHelper() {
+        createParticipant();
+    }
+
     public static ParticipantHelper getInstance() {
         return INSTANCE;
     }
 
-    private ParticipantHelper() {
-        criarParticipant();
-    }
-
-    private void criarParticipant() {
+    private void createParticipant() {
         listParticipant = new ArrayList<>();
         listParticipant.add(new Participant("Fulano de tal", "fulano@email.com"));
         listParticipant.add(new Participant("Ciclano de tal", "ciclano@email.com"));

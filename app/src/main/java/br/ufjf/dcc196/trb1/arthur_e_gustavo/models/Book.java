@@ -37,4 +37,9 @@ public class Book {
     public void setYear(Integer year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return this.title;
+    }
 }

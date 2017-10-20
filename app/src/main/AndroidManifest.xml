@@ -22,6 +22,9 @@
         <activity
             android:name=".AddEditBookActivity"
             android:label="@string/cad_book" />
+        <activity
+            android:name=".AddBookingActivity"
+            android:label="@string/cad_booking"></activity>
     </application>
 
 </manifest>

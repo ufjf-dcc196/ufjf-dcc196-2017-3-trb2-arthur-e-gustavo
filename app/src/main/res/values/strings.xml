@@ -15,5 +15,9 @@
     <string name="edt_publisher_empty">Campo Editora obrigatório.</string>
     <string name="edt_year_empty">Campo Ano obrigatório.</string>
     <string name="cad_book">Cadastrar livro</string>
+    <string name="cad_booking">Cadastro de reserva</string>
+    <string name="lbl_livro">Livro:</string>
+    <string name="lbl_participant">Participante:</string>
+    <string name="spn_select">(Selecione)</string>
 
 </resources>

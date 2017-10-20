@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listParticipants;
     private Button btnCadParticipant;
     private Button btnCadBook;
+    private Button btnCadBooking;
     private ParticipantAdapter participantAdapter;
 
     @Override
@@ -41,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddEditBookActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCadBooking = (Button) findViewById(R.id.btnCadBooking);
+        btnCadBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddBookingActivity.class);
                 startActivity(intent);
             }
         });

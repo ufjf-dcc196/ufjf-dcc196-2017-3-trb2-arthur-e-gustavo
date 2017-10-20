@@ -18,8 +18,8 @@ import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
 
 public class AddBookingActivity extends AppCompatActivity {
 
-    SpinnerAdapter participantAdapter;
-    SpinnerAdapter bookAdapter;
+    private SpinnerAdapter participantAdapter;
+    private SpinnerAdapter bookAdapter;
     private Spinner spnParticipant;
     private Spinner spnBook;
 

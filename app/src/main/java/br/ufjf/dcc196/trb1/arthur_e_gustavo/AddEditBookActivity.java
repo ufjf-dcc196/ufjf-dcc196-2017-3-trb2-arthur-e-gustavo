@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 import br.ufjf.dcc196.trb1.arthur_e_gustavo.adapters.BookAdapter;
 import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.BookHelper;
 import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Book;
@@ -55,6 +57,11 @@ public class AddEditBookActivity extends AppCompatActivity {
                 if (edtYear.getText().toString().isEmpty()) {
                     edtYear.setError(getResources().getString(R.string.edt_year_empty));
                     edtYear.requestFocus();
+                    error = true;
+                } else if (Integer.parseInt(edtYear.getText().toString()) > Calendar.getInstance().get(Calendar.YEAR)) {
+                    edtYear.setError(getResources().getString(R.string.edt_year_over));
+                    edtYear.requestFocus();
+                    edtYear.selectAll();
                     error = true;
                 }
 

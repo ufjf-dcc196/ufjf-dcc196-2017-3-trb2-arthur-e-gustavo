@@ -19,5 +19,5 @@
     <string name="lbl_livro">Livro:</string>
     <string name="lbl_participant">Participante:</string>
     <string name="spn_select">(Selecione)</string>
-
+    <string name="edt_year_over">O ano não deve ser posterior ao atual.</string>
 </resources>

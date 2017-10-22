@@ -1,12 +1,16 @@
 package br.ufjf.dcc196.trb1.arthur_e_gustavo.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Gustavo Magalhães on 15/10/2017.
  */
 
-public class Participant {
+public class Participant implements Serializable {
 
     private String name;
     private String email;

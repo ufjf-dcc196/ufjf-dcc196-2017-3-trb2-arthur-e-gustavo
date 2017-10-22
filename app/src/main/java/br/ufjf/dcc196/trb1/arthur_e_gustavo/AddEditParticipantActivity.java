@@ -27,10 +27,10 @@ public class AddEditParticipantActivity extends AppCompatActivity {
         btnAdd = (Button) findViewById(R.id.btnAddParticipant);
         btnBack = (Button) findViewById(R.id.btnBackParticipant);
 
-        String title = getIntent().getStringExtra("activity_title");
-        if (!title.isEmpty()) {
-            setTitle(title);
-        }
+        //String title = getIntent().getStringExtra("activity_title");
+        //if (!title.isEmpty()) {
+        //    setTitle(title);
+        //}
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -24,7 +24,10 @@
             android:label="@string/cad_book" />
         <activity
             android:name=".AddBookingActivity"
-            android:label="@string/cad_booking"></activity>
+            android:label="@string/cad_booking" />
+        <activity
+            android:name=".DetailsParticipantActivity"
+            android:label="@string/det_participant" />
     </application>
 
 </manifest>

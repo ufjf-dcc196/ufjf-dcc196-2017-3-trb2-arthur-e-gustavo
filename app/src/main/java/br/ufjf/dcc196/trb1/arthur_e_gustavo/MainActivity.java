@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddEditParticipantActivity.class);
-                intent.putExtra("activity_title", getResources().getString(R.string.cad_participant));
+                //intent.putExtra("activity_title", getResources().getString(R.string.cad_participant));
                 startActivity(intent);
             }
         });
@@ -60,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listParticipants.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, DetailsParticipantActivity.class);
+                intent.putExtra("participant", participantAdapter.getItem(position));
+                startActivity(intent);
+            }
+        });
+
         listParticipants.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long id) {
@@ -75,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     participant.setExitDate(null);
                     Toast.makeText(MainActivity.this, String.format(getResources().getString(R.string.participant_erase_hours), participant.getName()), Toast.LENGTH_LONG).show();
                 }
-                return false;
+                return true;
             }
         });
 

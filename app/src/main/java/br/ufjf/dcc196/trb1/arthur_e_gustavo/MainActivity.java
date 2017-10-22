@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddEditParticipantActivity.class);
-                //intent.putExtra("activity_title", getResources().getString(R.string.cad_participant));
                 startActivity(intent);
             }
         });

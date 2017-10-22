@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/lbl_livro"
+        android:text="@string/lbl_book"
         app:layout_constraintBottom_toBottomOf="@+id/spnBook"
         app:layout_constraintRight_toLeftOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/spnBook" />

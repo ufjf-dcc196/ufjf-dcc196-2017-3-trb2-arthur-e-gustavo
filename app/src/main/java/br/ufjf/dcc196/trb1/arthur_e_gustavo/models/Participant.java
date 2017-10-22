@@ -59,6 +59,10 @@ public class Participant implements Serializable {
         this.exitDate = exitDate;
     }
 
+    public boolean equalsTo(Participant other) {
+        return this.name.equals(other.getName()) && this.email.equals(other.getEmail());
+    }
+
     @Override
     public String toString() {
         return this.name;

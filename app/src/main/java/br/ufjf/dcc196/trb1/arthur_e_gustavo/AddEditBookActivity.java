@@ -1,8 +1,10 @@
 package br.ufjf.dcc196.trb1.arthur_e_gustavo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -75,6 +77,15 @@ public class AddEditBookActivity extends AppCompatActivity {
                     edtYear.setText("");
                     edtTitle.requestFocus();
                 }
+            }
+        });
+
+        listBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(AddEditBookActivity.this, DetailsBookActivity.class);
+                intent.putExtra("book", bookAdapter.getItem(position));
+                startActivity(intent);
             }
         });
 

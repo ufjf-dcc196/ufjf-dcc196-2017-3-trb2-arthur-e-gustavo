@@ -30,11 +30,20 @@ public class BookingHelper {
         List<Book> filtered = new ArrayList<>();
 
         for (Booking booking: listBooking) {
-            Participant bookingParticipant = booking.getParticipant();
-
-            if (bookingParticipant.getName().equals(participant.getName())
-                    && bookingParticipant.getEmail().equals(participant.getEmail())) {
+            if (participant.equalsTo(booking.getParticipant())) {
                 filtered.add(booking.getBook());
+            }
+        }
+
+        return filtered;
+    }
+
+    public List<Participant> getListParticipants(Book book) {
+        List<Participant> filtered = new ArrayList<>();
+
+        for (Booking booking: listBooking) {
+            if (book.equalsTo(booking.getBook())) {
+                filtered.add(booking.getParticipant());
             }
         }
 

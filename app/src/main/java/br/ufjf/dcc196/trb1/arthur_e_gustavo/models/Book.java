@@ -1,6 +1,8 @@
 package br.ufjf.dcc196.trb1.arthur_e_gustavo.models;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private String title;
     private String publisher;
     private Integer year;
@@ -36,6 +38,11 @@ public class Book {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public boolean equalsTo(Book other) {
+        return this.title.equals(other.getTitle()) && this.publisher.equals(other.getPublisher())
+                && this.year.equals(other.getYear());
     }
 
     @Override

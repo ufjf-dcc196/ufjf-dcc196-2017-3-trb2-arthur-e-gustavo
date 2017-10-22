@@ -16,8 +16,7 @@
     <string name="edt_year_empty">Campo Ano obrigatório.</string>
     <string name="cad_book">Cadastrar livro</string>
     <string name="cad_booking">Cadastro de reserva</string>
-    <string name="lbl_livro">Livro:</string>
-    <string name="lbl_participant">Participante:</string>
+    <string name="lbl_participant">Participante</string>
     <string name="spn_select">(Selecione)</string>
     <string name="edt_year_over">O ano não deve ser posterior ao atual.</string>
     <string name="participant_define_enter_hour">Horário de entrada definido para participante %1$s.</string>
@@ -30,4 +29,8 @@
     <string name="lbl_exit_date">Horário de saída</string>
     <string name="lbl_bookings">Reservas</string>
     <string name="edt_missing">Não informado</string>
+    <string name="lbl_book">Livro</string>
+    <string name="lbl_title">Título</string>
+    <string name="lbl_publisher">Editora</string>
+    <string name="lbl_year">Ano</string>
 </resources>

@@ -28,7 +28,9 @@
         <activity
             android:name=".DetailsParticipantActivity"
             android:label="@string/det_participant" />
-        <activity android:name=".DetailsBookActivity"></activity>
+        <activity
+            android:name=".DetailsBookActivity"
+            android:label="@string/det_book" />
     </application>
 
 </manifest>

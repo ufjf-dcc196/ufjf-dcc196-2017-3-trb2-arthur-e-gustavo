@@ -33,4 +33,5 @@
     <string name="lbl_title">Título</string>
     <string name="lbl_publisher">Editora</string>
     <string name="lbl_year">Ano</string>
+    <string name="det_book">Detalhes do livro</string>
 </resources>

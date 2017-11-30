@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo.models;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo.models;
 
 import java.io.Serializable;
 

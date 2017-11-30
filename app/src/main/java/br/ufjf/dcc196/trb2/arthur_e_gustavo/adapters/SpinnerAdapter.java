@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo.adapters;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.Comparator;
 import java.util.List;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.R;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.R;
 
 public class SpinnerAdapter<T> extends ArrayAdapter<T> {
 

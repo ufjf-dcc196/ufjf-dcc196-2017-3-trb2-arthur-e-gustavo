@@ -1,18 +1,15 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.R;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.adapters.ParticipantAdapter;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.BookingHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.ParticipantHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Book;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters.ParticipantAdapter;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.BookingHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Book;
 
 public class DetailsBookActivity extends AppCompatActivity {
 

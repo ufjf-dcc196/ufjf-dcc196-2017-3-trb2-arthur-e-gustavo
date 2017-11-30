@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.adapters.ParticipantAdapter;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.ParticipantHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters.ParticipantAdapter;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.ParticipantHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
 
 public class MainActivity extends AppCompatActivity {
 

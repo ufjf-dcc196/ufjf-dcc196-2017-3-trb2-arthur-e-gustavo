@@ -1,7 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo.models;
-
-import android.os.Parcel;
-import android.os.Parcelable;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo.models;
 
 import java.io.Serializable;
 import java.util.Date;

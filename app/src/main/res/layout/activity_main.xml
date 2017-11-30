@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.ufjf.dcc196.trb1.arthur_e_gustavo.MainActivity">
+    tools:context="br.ufjf.dcc196.trb2.arthur_e_gustavo.MainActivity">
 
     <Button
         android:id="@+id/btnCadParticipant"

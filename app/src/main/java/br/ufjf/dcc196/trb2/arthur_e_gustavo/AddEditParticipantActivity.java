@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.ParticipantHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.ParticipantHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
 
 public class AddEditParticipantActivity extends AppCompatActivity {
 

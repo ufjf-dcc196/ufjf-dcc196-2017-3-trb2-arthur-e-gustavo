@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo;
 
 import org.junit.Test;
 

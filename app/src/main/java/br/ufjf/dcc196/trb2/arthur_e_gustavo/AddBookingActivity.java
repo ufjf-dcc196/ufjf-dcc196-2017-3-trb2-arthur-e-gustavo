@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,13 +8,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.adapters.SpinnerAdapter;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.BookHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.BookingHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers.ParticipantHelper;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Book;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Booking;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters.SpinnerAdapter;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.BookHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.BookingHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.ParticipantHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Book;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Booking;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
 
 public class AddBookingActivity extends AppCompatActivity {
 

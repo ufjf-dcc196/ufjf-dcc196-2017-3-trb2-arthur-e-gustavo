@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "br.ufjf.dcc196.trb1.a2017_dcc196_trb1_arthur_e_gustavo"
+        applicationId "br.ufjf.dcc196.trb2.a2017_dcc196_trb2_arthur_e_gustavo"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

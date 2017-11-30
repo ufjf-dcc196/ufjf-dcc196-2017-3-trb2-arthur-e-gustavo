@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("br.ufjf.dcc196.trb1.a2017_dcc196_trb1_arthur_e_gustavo", appContext.getPackageName());
+        assertEquals("br.ufjf.dcc196.trb2.a2017_dcc196_trb2_arthur_e_gustavo", appContext.getPackageName());
     }
 }

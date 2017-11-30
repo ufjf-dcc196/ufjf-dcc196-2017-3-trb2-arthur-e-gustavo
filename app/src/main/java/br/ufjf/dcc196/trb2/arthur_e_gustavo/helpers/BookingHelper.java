@@ -1,13 +1,11 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers;
-
-import android.icu.text.MessagePattern;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Book;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Booking;
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Book;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Booking;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
 
 public class BookingHelper {
 
@@ -29,7 +27,7 @@ public class BookingHelper {
     public List<Book> getListBooks(Participant participant) {
         List<Book> filtered = new ArrayList<>();
 
-        for (Booking booking: listBooking) {
+        for (Booking booking : listBooking) {
             if (participant.equalsTo(booking.getParticipant())) {
                 filtered.add(booking.getBook());
             }
@@ -41,7 +39,7 @@ public class BookingHelper {
     public List<Participant> getListParticipants(Book book) {
         List<Participant> filtered = new ArrayList<>();
 
-        for (Booking booking: listBooking) {
+        for (Booking booking : listBooking) {
             if (book.equalsTo(booking.getBook())) {
                 filtered.add(booking.getParticipant());
             }

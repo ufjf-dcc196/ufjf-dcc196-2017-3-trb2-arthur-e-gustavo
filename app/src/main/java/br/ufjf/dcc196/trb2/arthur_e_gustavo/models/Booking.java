@@ -1,4 +1,4 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo.models;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo.models;
 
 public class Booking {
     private Participant participant;

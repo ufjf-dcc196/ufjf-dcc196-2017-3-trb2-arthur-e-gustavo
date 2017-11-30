@@ -1,9 +1,9 @@
-package br.ufjf.dcc196.trb1.arthur_e_gustavo.helpers;
+package br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufjf.dcc196.trb1.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
 
 public class ParticipantHelper {
     private static final ParticipantHelper INSTANCE = new ParticipantHelper();

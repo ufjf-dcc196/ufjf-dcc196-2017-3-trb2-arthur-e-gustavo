@@ -1,5 +1,6 @@
 # ufjf-dcc196-2017-3-trb2-arthur-e-gustavo
 Gustavo Magalhães Moura - 201235015 - gmmoura@ice.ufjf.br
+
 Arthur
 
 O projeto possui três classes de domínio:

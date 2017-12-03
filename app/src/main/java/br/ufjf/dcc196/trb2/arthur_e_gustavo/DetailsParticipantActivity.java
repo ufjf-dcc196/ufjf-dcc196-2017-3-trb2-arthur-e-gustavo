@@ -7,11 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.text.DateFormat;
-
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters.BookAdapter;
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.BookingHelper;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.ParticipantHelper;
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.utils.DateUtils;
 
 public class DetailsParticipantActivity extends AppCompatActivity {
 
@@ -29,9 +29,9 @@ public class DetailsParticipantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_participant);
 
-        DateFormat df = android.text.format.DateFormat.getDateFormat(getApplicationContext());
+        long id_participant = getIntent().getLongExtra("participant", -1);
 
-        participant = (Participant) getIntent().getSerializableExtra("participant");
+        participant = new ParticipantHelper(getApplicationContext()).get(id_participant);
 
         edtName = (EditText) findViewById(R.id.edtParticipantName);
         edtName.setFocusable(false);
@@ -44,7 +44,7 @@ public class DetailsParticipantActivity extends AppCompatActivity {
         edtEnterDate = (EditText) findViewById(R.id.edtParticipantEnterDate);
         edtEnterDate.setFocusable(false);
         if (participant.getEnterDate() != null) {
-            edtEnterDate.setText(df.format(participant.getEnterDate()));
+            edtEnterDate.setText(DateUtils.convertToString(participant.getEnterDate()));
         } else {
             edtEnterDate.setText(R.string.edt_missing);
         }
@@ -52,13 +52,13 @@ public class DetailsParticipantActivity extends AppCompatActivity {
         edtExitDate = (EditText) findViewById(R.id.edtParticipantExitDate);
         edtExitDate.setFocusable(false);
         if (participant.getExitDate() != null) {
-            edtExitDate.setText(df.format(participant.getExitDate()));
+            edtExitDate.setText(DateUtils.convertToString(participant.getExitDate()));
         } else {
             edtExitDate.setText(R.string.edt_missing);
         }
 
         listBookings = (ListView) findViewById(R.id.listParticipantBookings);
-        bookAdapter = new BookAdapter(getApplicationContext(), BookingHelper.getInstance().getListBooks(participant));
+        bookAdapter = new BookAdapter(getApplicationContext(), new BookingHelper(getApplicationContext()).getListBooks(participant));
         listBookings.setAdapter(bookAdapter);
 
         btnBack = (Button) findViewById(R.id.btnBackDetailsParticipant);

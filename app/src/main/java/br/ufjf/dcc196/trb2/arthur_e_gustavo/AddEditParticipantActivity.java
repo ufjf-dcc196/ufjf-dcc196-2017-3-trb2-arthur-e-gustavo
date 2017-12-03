@@ -43,7 +43,7 @@ public class AddEditParticipantActivity extends AppCompatActivity {
                 }
                 if (!error) {
                     Participant participant = new Participant(edtName.getText().toString(), edtEmail.getText().toString());
-                    ParticipantHelper.getInstance().addParticipant(participant);
+                    new ParticipantHelper(getApplicationContext()).add(participant);
                     Toast.makeText(AddEditParticipantActivity.this, getResources().getString(R.string.successfully_registered), Toast.LENGTH_LONG).show();
                     edtName.setText("");
                     edtEmail.setText("");

@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters.ParticipantAdapter;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.BookHelper;
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.BookingHelper;
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Book;
 
@@ -26,7 +27,8 @@ public class DetailsBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_book);
 
-        book = (Book) getIntent().getSerializableExtra("book");
+        long id_book = getIntent().getLongExtra("book", -1);
+        book = new BookHelper(getApplicationContext()).get(id_book);
 
         edtTitle = (EditText) findViewById(R.id.edtBookTitle);
         edtTitle.setFocusable(false);
@@ -41,8 +43,7 @@ public class DetailsBookActivity extends AppCompatActivity {
         edtYear.setText(book.getYear().toString());
 
         listBookings = (ListView) findViewById(R.id.listBookBookings);
-        participantAdapter =
-                new ParticipantAdapter(getApplicationContext(), BookingHelper.getInstance().getListParticipants(book));
+        participantAdapter = new ParticipantAdapter(getApplicationContext(), new BookingHelper(getApplicationContext()).getListParticipants(book));
         listBookings.setAdapter(participantAdapter);
 
         btnBack = (Button) findViewById(R.id.btnBackDetailsBook);

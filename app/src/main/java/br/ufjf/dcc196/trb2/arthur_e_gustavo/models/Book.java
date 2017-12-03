@@ -3,6 +3,7 @@ package br.ufjf.dcc196.trb2.arthur_e_gustavo.models;
 import java.io.Serializable;
 
 public class Book implements Serializable {
+    private long id;
     private String title;
     private String publisher;
     private Integer year;
@@ -14,6 +15,14 @@ public class Book implements Serializable {
         this.title = title;
         this.publisher = publisher;
         this.year = year;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {

@@ -1,50 +1,31 @@
 package br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import java.util.Comparator;
-import java.util.List;
-
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.R;
-import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Book;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.AppContract;
 
-import static br.ufjf.dcc196.trb2.arthur_e_gustavo.R.layout.book_view;
+public class BookAdapter extends CursorAdapter {
 
-public class BookAdapter extends ArrayAdapter<Book> {
-
-    private static final Comparator<Book> comparatorBook = new Comparator<Book>() {
-        public int compare(Book b1, Book b2) {
-            return b1.getTitle().toLowerCase().compareTo(b2.getTitle().toLowerCase());
-        }
-    };
-
-    public BookAdapter(Context context, List<Book> books) {
-        super(context, 0, books);
-        this.sort(comparatorBook);
+    public BookAdapter(Context context, Cursor c) {
+        super(context, c);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Book Book = getItem(position);
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(book_view, parent, false);
-        }
-        TextView textTitle = convertView.findViewById(R.id.book_view_txtTitle);
-        textTitle.setText(Book.getTitle());
-        return convertView;
+    public View newView(Context context, Cursor cursor, ViewGroup parent) {
+        return LayoutInflater.from(context).inflate(R.layout.book_view, parent, false);
     }
 
-
     @Override
-    public void notifyDataSetChanged() {
-        this.setNotifyOnChange(false);
-        this.sort(comparatorBook);
-        super.notifyDataSetChanged();
-        this.setNotifyOnChange(true);
+    public void bindView(View view, Context context, Cursor cursor) {
+        TextView textTitle = view.findViewById(R.id.book_view_txtTitle);
+        String title = cursor.getString(cursor.getColumnIndexOrThrow(AppContract.Book.COLUMN_NAME_TITLE));
+        textTitle.setText(title);
     }
 }

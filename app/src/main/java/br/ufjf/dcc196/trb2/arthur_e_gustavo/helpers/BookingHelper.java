@@ -1,54 +1,43 @@
 package br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Book;
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Booking;
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
 
-public class BookingHelper {
+public class BookingHelper extends AppDbHelper {
 
-    private static final BookingHelper INSTANCE = new BookingHelper();
-    private List<Booking> listBooking;
-
-    private BookingHelper() {
-        listBooking = new ArrayList<>();
+    public BookingHelper(Context context) {
+        super(context);
     }
 
-    public static BookingHelper getInstance() {
-        return INSTANCE;
+    public Cursor getListBooks(Participant participant) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(AppContract.Booking.SQL_SELECT_BOOKS_BY_PARTICIPANT, new String[]{String.valueOf(participant.getId())});
+        return cursor;
     }
 
-    public List<Booking> getListBooking() {
-        return listBooking;
+    public Cursor getListParticipants(Book book) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(AppContract.Booking.SQL_SELECT_PARTICIPANTS_BY_BOOK, new String[]{String.valueOf(book.getId())});
+        return cursor;
     }
 
-    public List<Book> getListBooks(Participant participant) {
-        List<Book> filtered = new ArrayList<>();
-
-        for (Booking booking : listBooking) {
-            if (participant.equalsTo(booking.getParticipant())) {
-                filtered.add(booking.getBook());
-            }
+    public void add(Booking booking) {
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(AppContract.Booking.COLUMN_NAME_PARTICIPANT, booking.getParticipant().getId());
+            values.put(AppContract.Booking.COLUMN_NAME_BOOK, booking.getParticipant().getId());
+            db.insert(AppContract.Booking.TABLE_NAME, null, values);
+        } catch (Exception e) {
+            Log.e("BOOKING", e.getLocalizedMessage());
+            Log.e("BOOKING", e.getStackTrace().toString());
         }
-
-        return filtered;
-    }
-
-    public List<Participant> getListParticipants(Book book) {
-        List<Participant> filtered = new ArrayList<>();
-
-        for (Booking booking : listBooking) {
-            if (book.equalsTo(booking.getBook())) {
-                filtered.add(booking.getParticipant());
-            }
-        }
-
-        return filtered;
-    }
-
-    public void addBooking(Booking booking) {
-        listBooking.add(booking);
     }
 }

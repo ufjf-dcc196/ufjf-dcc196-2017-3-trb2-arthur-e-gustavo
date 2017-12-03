@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listParticipants = (ListView) findViewById(R.id.listParticipant);
-        participantAdapter = new ParticipantAdapter(getApplicationContext(), ParticipantHelper.getInstance().getListParticipant());
+        participantAdapter = new ParticipantAdapter(getBaseContext(), new ParticipantHelper(getBaseContext()).getAllCursor());
         listParticipants.setAdapter(participantAdapter);
 
         btnCadParticipant = (Button) findViewById(R.id.btnCadParticipant);
@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
         listParticipants.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, DetailsParticipantActivity.class);
-                intent.putExtra("participant", participantAdapter.getItem(position));
+                intent.putExtra("participant", id);
                 startActivity(intent);
             }
         });
@@ -71,18 +71,21 @@ public class MainActivity extends AppCompatActivity {
         listParticipants.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long id) {
-                Participant participant = participantAdapter.getItem(pos);
+                Participant participant = new ParticipantHelper(getApplicationContext()).get(id);
+                String msg = "Ocorreu um erro ao atualizar o horário do participante";
                 if (participant.getEnterDate() == null) {
                     participant.setEnterDate(Calendar.getInstance().getTime());
-                    Toast.makeText(MainActivity.this, String.format(getResources().getString(R.string.participant_define_enter_hour), participant.getName()), Toast.LENGTH_LONG).show();
+                    msg = String.format(getResources().getString(R.string.participant_define_enter_hour), participant.getName());
                 } else if (participant.getExitDate() == null) {
                     participant.setExitDate(Calendar.getInstance().getTime());
-                    Toast.makeText(MainActivity.this, String.format(getResources().getString(R.string.participant_define_exit_hour), participant.getName()), Toast.LENGTH_LONG).show();
+                    msg = String.format(getResources().getString(R.string.participant_define_exit_hour), participant.getName());
                 } else {
                     participant.setEnterDate(null);
                     participant.setExitDate(null);
-                    Toast.makeText(MainActivity.this, String.format(getResources().getString(R.string.participant_erase_hours), participant.getName()), Toast.LENGTH_LONG).show();
+                    msg = String.format(getResources().getString(R.string.participant_erase_hours), participant.getName());
                 }
+                new ParticipantHelper(getApplicationContext()).update(participant);
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
                 return true;
             }
         });
@@ -91,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        participantAdapter.notifyDataSetChanged();
+        participantAdapter.changeCursor(new ParticipantHelper(getApplicationContext()).getAllCursor());
         super.onResume();
     }
 }

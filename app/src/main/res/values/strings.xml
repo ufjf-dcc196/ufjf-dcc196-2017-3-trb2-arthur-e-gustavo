@@ -34,4 +34,14 @@
     <string name="lbl_publisher">Editora</string>
     <string name="lbl_year">Ano</string>
     <string name="det_book">Detalhes do livro</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="msg_book_edit_success">Livro editado com sucesso</string>
+    <string name="lbl_confirm_exclusion">Confirmar exclusão</string>
+    <string name="lbl_question_confirm_exclusion">Confirma a exclusão deste livro?</string>
+    <string name="lbl_yes">Sim</string>
+    <string name="lbl_no">Não</string>
+    <string name="msg_book_exclusion_success">Livro excluído com sucesso</string>
+    <string name="lbl_titulo">Título</string>
+    <string name="cad_reservation">Cadastro de Reserva</string>
 </resources>

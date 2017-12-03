@@ -3,12 +3,9 @@ package br.ufjf.dcc196.trb2.arthur_e_gustavo.models;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by Gustavo Magalhães on 15/10/2017.
- */
-
 public class Participant implements Serializable {
 
+    private long id;
     private String name;
     private String email;
     private Date enterDate;
@@ -22,6 +19,14 @@ public class Participant implements Serializable {
         this.email = email;
         this.enterDate = null;
         this.exitDate = null;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {

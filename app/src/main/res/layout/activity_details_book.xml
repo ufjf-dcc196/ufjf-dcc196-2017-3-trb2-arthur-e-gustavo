@@ -19,15 +19,16 @@
 
     <EditText
         android:id="@+id/edtBookTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:editable="false"
         android:ems="10"
         android:enabled="false"
+        android:hint="@string/lbl_titulo"
         android:inputType="textPersonName"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBookTitle" />
 
     <TextView
@@ -47,9 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:editable="false"
         android:ems="10"
         android:enabled="false"
+        android:hint="@string/lbl_publisher"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBookPublisher" />
@@ -59,11 +60,11 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="0dp"
-        android:editable="false"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:enabled="false"
-        android:inputType="number"
+        android:hint="@string/lbl_year"
+        android:inputType="textPersonName"
         app:layout_constraintLeft_toRightOf="@+id/edtBookPublisher"
         app:layout_constraintTop_toBottomOf="@+id/txtBookYear" />
 
@@ -72,6 +73,7 @@
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/lbl_year"
         app:layout_constraintLeft_toRightOf="@+id/txtBookPublisher"
@@ -94,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/action_back"
@@ -106,6 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/lbl_bookings"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -39,7 +39,7 @@ public class AddEditBookActivity extends AppCompatActivity {
         edtYear = (EditText) findViewById(R.id.edtBookYear);
 
         listBooks = (ListView) findViewById(R.id.listBook);
-        bookAdapter = new BookAdapter(getApplicationContext(), BookHelper.getInstance().getListBooks());
+        bookAdapter = new BookAdapter(getApplicationContext(), new BookHelper(getApplicationContext()).getAllCursor());
         listBooks.setAdapter(bookAdapter);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -69,13 +69,13 @@ public class AddEditBookActivity extends AppCompatActivity {
 
                 if (!error) {
                     Book book = new Book(edtTitle.getText().toString(), edtPublisher.getText().toString(), Integer.parseInt(edtYear.getText().toString()));
-                    BookHelper.getInstance().addBook(book);
-                    bookAdapter.notifyDataSetChanged();
+                    new BookHelper(getApplicationContext()).add(book);
                     Toast.makeText(AddEditBookActivity.this, getResources().getString(R.string.successfully_registered), Toast.LENGTH_LONG).show();
                     edtTitle.setText("");
                     edtPublisher.setText("");
                     edtYear.setText("");
                     edtTitle.requestFocus();
+                    bookAdapter.changeCursor(new BookHelper(getApplicationContext()).getAllCursor());
                 }
             }
         });
@@ -84,7 +84,7 @@ public class AddEditBookActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(AddEditBookActivity.this, DetailsBookActivity.class);
-                intent.putExtra("book", bookAdapter.getItem(position));
+                intent.putExtra("book", id);
                 startActivity(intent);
             }
         });

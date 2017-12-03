@@ -1,46 +1,34 @@
 package br.ufjf.dcc196.trb2.arthur_e_gustavo.adapters;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import java.util.Comparator;
-import java.util.List;
-
 import br.ufjf.dcc196.trb2.arthur_e_gustavo.R;
-import br.ufjf.dcc196.trb2.arthur_e_gustavo.models.Participant;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.AppContract;
+import br.ufjf.dcc196.trb2.arthur_e_gustavo.helpers.AppDbHelper;
 
-public class ParticipantAdapter extends ArrayAdapter<Participant> {
+public class ParticipantAdapter extends CursorAdapter {
+    private AppDbHelper appHelper;
 
-    private static final Comparator<Participant> comparatorParticipant = new Comparator<Participant>() {
-        public int compare(Participant p1, Participant p2) {
-            return p1.getName().toLowerCase().compareTo(p2.getName().toLowerCase());
-        }
-    };
-
-    public ParticipantAdapter(Context context, List<Participant> participants) {
-        super(context, 0, participants);
+    public ParticipantAdapter(Context context, Cursor c) {
+        super(context, c);
+        appHelper = new AppDbHelper(context);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Participant participant = getItem(position);
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.participant_view, parent, false);
-        }
-        TextView textName = convertView.findViewById(R.id.participant_view_txtName);
-        textName.setText(participant.getName());
-        return convertView;
+    public View newView(Context context, Cursor cursor, ViewGroup parent) {
+        return LayoutInflater.from(context).inflate(R.layout.participant_view, parent, false);
     }
 
     @Override
-    public void notifyDataSetChanged() {
-        this.setNotifyOnChange(false);
-        this.sort(comparatorParticipant);
-        super.notifyDataSetChanged();
-        this.setNotifyOnChange(true);
+    public void bindView(View view, Context context, Cursor cursor) {
+        TextView textTitle = view.findViewById(R.id.participant_view_txtName);
+        String title = cursor.getString(cursor.getColumnIndexOrThrow(AppContract.Participant.COLUMN_NAME_NAME));
+        textTitle.setText(title);
     }
 }

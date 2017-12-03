@@ -19,14 +19,15 @@
 
     <EditText
         android:id="@+id/edtParticipantName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:enabled="false"
         android:inputType="textPersonName"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtParticipantName" />
 
     <TextView
@@ -42,14 +43,15 @@
 
     <EditText
         android:id="@+id/edtParticipantEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:enabled="false"
         android:inputType="textPersonName"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtParticipantEmail" />
 
     <TextView
@@ -65,14 +67,15 @@
 
     <EditText
         android:id="@+id/edtParticipantEnterDate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:enabled="false"
         android:inputType="date"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtParticipantEnterDate" />
 
     <TextView
@@ -88,14 +91,15 @@
 
     <EditText
         android:id="@+id/edtParticipantExitDate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:enabled="false"
         android:inputType="date"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtParticipantExitDate" />
 
     <TextView
